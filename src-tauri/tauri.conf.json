@@ -15,8 +15,8 @@
         "title": "IR POS",
         "width": 1366,
         "height": 900,
-        "minWidth": 1100,
-        "minHeight": 720,
+        "minWidth": 400,
+        "minHeight": 600,
         "resizable": true,
         "maximized": true,
         "fullscreen": false

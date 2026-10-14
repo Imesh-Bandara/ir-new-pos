@@ -1,3 +1,47 @@
 @import "tailwindcss";
 @source "../index.html";
 @source "./**/*.{js,ts,jsx,tsx}";
+
+@layer base {
+  :root {
+    --safe-area-top: env(safe-area-inset-top, 0px);
+    --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-area-left: env(safe-area-inset-left, 0px);
+    --safe-area-right: env(safe-area-inset-right, 0px);
+  }
+
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  input, textarea, [contenteditable="true"] {
+    user-select: text;
+    -webkit-user-select: text;
+  }
+}
+
+@keyframes scannerLaser {
+  0% {
+    top: 8%;
+    opacity: 0.4;
+  }
+  50% {
+    top: 88%;
+    opacity: 1;
+  }
+  100% {
+    top: 8%;
+    opacity: 0.4;
+  }
+}
+
+.animate-scan-laser {
+  animation: scannerLaser 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+

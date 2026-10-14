@@ -24,7 +24,10 @@ use commands::held_sales_cmds::{save_held_sale, get_held_sales, delete_held_sale
 use commands::supplier_cmds::{get_suppliers, get_supplier, create_supplier, update_supplier, deactivate_supplier};
 use commands::purchase_cmds::{create_purchase_order, receive_goods, process_purchase_return, record_supplier_payment, get_purchase_orders, get_purchases, get_purchase_order_details, get_purchase_details};
 use commands::report_cmds::{get_dashboard_summary, get_sales_report, get_product_performance, get_inventory_report, get_supplier_report};
-use commands::backup_cmds::{create_backup_cmd, validate_backup_cmd, restore_backup_cmd};
+use commands::backup_cmds::{
+    create_backup_cmd, validate_backup_cmd, restore_backup_cmd,
+    export_backup_for_vault_cmd, get_vault_config_cmd, save_vault_config_cmd, update_vault_sync_status_cmd
+};
 use commands::hardware_cmds::{print_receipt_cmd, test_printer_cmd, open_cash_drawer_cmd, test_display_cmd, get_hardware_settings_cmd, update_hardware_settings_cmd};
 
 // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
@@ -171,6 +174,10 @@ pub fn run() {
             create_backup_cmd,
             validate_backup_cmd,
             restore_backup_cmd,
+            export_backup_for_vault_cmd,
+            get_vault_config_cmd,
+            save_vault_config_cmd,
+            update_vault_sync_status_cmd,
             print_receipt_cmd,
             test_printer_cmd,
             open_cash_drawer_cmd,
